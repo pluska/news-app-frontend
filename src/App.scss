@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
-.auth-layout {
+.layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -32,7 +32,6 @@ h1, h2, h3, h4, h5, h6 {
       list-style-type: none;
       margin: 0;
       padding: 0;
-
       li {
         a {
           color: #fff;
@@ -45,6 +44,45 @@ h1, h2, h3, h4, h5, h6 {
           }
         }
       }
+      .nav-link {
+        position: relative;
+        cursor: pointer;
+        color:#fff;
+        .nav-menu {
+          display: none;
+          position: absolute;
+          background-color: #333;
+          width: 100%;
+          top: 100%;
+          left: 0;
+          padding: 0;
+          margin: 5px 0;
+          border: #ff9800 solid 1px;
+          border-radius: 8px;
+          li {
+            width: 100%;
+            padding: 5px;
+            a {
+              color: #fff;
+              text-decoration: none;
+              padding: 5px;
+              transition: color 0.3s;
+
+              &:hover {
+                color: #333;
+                }
+              }
+              &:hover {
+                background-color: #ff9800;
+              }
+            }
+          }
+        }
+        .active {
+          .nav-menu {
+            display: block;
+          }
+        }
     }
   }
 

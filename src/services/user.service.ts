@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { UserData } from '../interfaces/userData';
 import { Credentials } from '../interfaces/credentials';
+import { validateError } from '../utils/validators';
 
 const API_URL = `http://localhost:8000/api`;
 
@@ -14,7 +15,7 @@ export const register = async (userData: UserData) => {
     const response = await axios.post(`${API_URL}/register`, userData, header);
     return response.data;
   } catch (error) {
-    throw error;
+    return validateError(error);
   }
 };
 
